@@ -1,0 +1,27 @@
+
+<html>
+<head>
+	<title>How to Spend Your Time</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="spend_time.js"></script>
+	<link rel="stylesheet" href="spend_time.css">
+</head>
+<body>
+	<p>
+	  	<input id="currentActivity" placeholder="Enter Activity"/>
+	</p>
+	<p>
+		<div class="slidecontainer">
+			<p>Value: <span id="imporanceValue"></span></p>
+		  	<input type="range" min="0" max="100" value="50" class="slider" id="importanceRange">
+		</div>
+	</p>
+	<div id="activitiesList">
+		<div>
+			<svg height="72" width="320" class='wordContainer'>
+			  <text id="currentOutput" text-anchor="middle" alignment-baseline="central" class="word" x="160" y="36" >Enter Activity</text>
+			</svg>
+		</div>
+	</div>
+</body>
+</html>
