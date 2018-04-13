@@ -1,26 +1,71 @@
 
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>How to Spend Your Time</title>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 	<script type="text/javascript" src="spend_time.js"></script>
 	<link rel="stylesheet" href="spend_time.css">
 </head>
 <body>
-	<p>
-	  	<input id="currentActivity" placeholder="Enter Activity"/>
-	</p>
-	<p>
-		<div class="slidecontainer">
-			<p>Value: <span id="imporanceValue"></span></p>
-		  	<input type="range" min="0" max="100" value="50" class="slider" id="importanceRange">
+	<div class='container'>
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<h3>Rating</h3>
+				<div class="slidecontainer">
+					Importance <span id="imporanceValue"></span>
+					<br/>
+				  	<input type="range" min="0" max="100" value="50" class="slider" id="importanceRange">
+				</div>
+				<div class="slidecontainer">
+					Urgency <span id="urgencyValue"></span>
+					<br/>
+				  	<input type="range" min="0" max="100" value="50" class="slider" id="urgencyRange">
+				</div>
+				<div class="slidecontainer">
+					Experiencing Self <span id="experienceValue"></span>
+					<br/>
+				  	<input type="range" min="-50" max="50" value="0" class="slider" id="experienceRange">
+				</div>
+				<div class="slidecontainer">
+					Remembering Self <span id="rememberValue"></span>
+					<br/>
+				  	<input type="range" min="0" max="100" value="50" class="slider" id="rememberRange">
+				</div>
+			</div>
+			<div class="col-sm-6 text-center">
+				<h3>Activity</h3>
+				<p class="form-group">
+		  			<input class="form-control text-center" maxlength="14" type="text" id="currentActivityInput" placeholder="Enter Activity"/>
+		  		</p>
+		  		<div id="currentActivity">
+			  		<p>
+						<svg height="74" width="292">
+							<rect x="1" y="1" width="290" height="72" class='wordContainer' rx="20" ry="20"/>
+						  	<text id="currentOutput" text-anchor="middle" alignment-baseline="central" class="word" x="145" y="36" >Enter Activity</text>
+						</svg>
+					</p>
+				</div>
+				<p>
+		  			<button class="btn btn-primary" id="addActivity">Add</button>
+		  		</p>
+		  	</div>
+		  	
 		</div>
-	</p>
-	<div id="activitiesList">
-		<div>
-			<svg height="72" width="320" class='wordContainer'>
-			  <text id="currentOutput" text-anchor="middle" alignment-baseline="central" class="word" x="160" y="36" >Enter Activity</text>
-			</svg>
+		<div class="row text-center">
+			<h3>Activities</h3>
+			<div id="activitiesList">
+			</div>
 		</div>
 	</div>
 </body>

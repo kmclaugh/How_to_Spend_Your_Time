@@ -1,12 +1,16 @@
 .word{
   stroke-width: 1;
 }
-svg.wordContainer {
-  border: solid
+rect.wordContainer {
+	stroke-width: 2;
+  	stroke: grey;
 }
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* The slider itself */
@@ -42,4 +46,10 @@ svg.wordContainer {
     height: 25px; /* Slider handle height */
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
+}
+
+#currentActivityInput{
+	max-width: 140px;
+	margin-right: auto;
+	margin-left: auto;
 }
