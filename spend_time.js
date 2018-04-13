@@ -68,7 +68,7 @@ $(document).ready(function() {
   currentWord.setAttribute("font-size", size);
   currentWord.setAttribute("fill-opacity", wordTransparency);
   var wordContainer = document.getElementsByClassName('wordContainer')[0];
-  wordContainer.style.fill = "#ffff00";
+  wordContainer.style.fill = color;
   wordContainer.setAttribute("fill-opacity", containerTransparency);
 
   //importance slider
@@ -92,7 +92,7 @@ $(document).ready(function() {
     urgencyOutput.innerHTML = this.value;
     var rawValue = this.value;
 
-    urgency = rawValue/2;
+    urgency = 50 - rawValue/2;
     containerTransparency = findTransparency(urgency);
     wordContainer.setAttribute("fill-opacity", containerTransparency);
   }
@@ -109,6 +109,7 @@ $(document).ready(function() {
     color = findColor(experience, saturation);
     currentWord.style.fill = color;
     currentWord.style.stroke = color;
+    wordContainer.style.fill = color;
   }
 
   //remember slider
