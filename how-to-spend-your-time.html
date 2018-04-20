@@ -6,6 +6,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -30,7 +31,7 @@
 				<div class="slidecontainer">
 					Urgency <span id="urgencyValue"></span>
 					<br/>
-				  	<input type="range" min="0" max="100" value="50" class="slider" id="urgencyRange">
+				  	<input type="range" min="0" max="4" value="2" class="slider" id="urgencyRange">
 				</div>
 				<div class="slidecontainer">
 					Experiencing Self <span id="experienceValue"></span>
@@ -40,7 +41,7 @@
 				<div class="slidecontainer">
 					Remembering Self <span id="rememberValue"></span>
 					<br/>
-				  	<input type="range" min="0" max="100" value="50" class="slider" id="rememberRange">
+				  	<input type="range" min="1" max="100" value="50" class="slider" id="rememberRange">
 				</div>
 			</div>
 			<div class="col-sm-6 text-center">
@@ -50,12 +51,17 @@
 		  		</p>
 		  		<div id="currentActivity">
 			  		<p>
-						<svg height="74" width="292">
-							<rect x="1" y="1" width="290" height="72" class='wordContainer' rx="20" ry="20"/>
+						<svg height="82" width="300">
+							<rect x="4" y="4" width="290" height="72" class='wordContainer' rx="20" ry="20"/>
 						  	<text id="currentOutput" text-anchor="middle" alignment-baseline="central" class="word" x="145" y="36" >Enter Activity</text>
 						</svg>
 					</p>
 				</div>
+				<p>
+		  			Productivity <span id="productivityValue"></span>
+		  			Enjoyment <span id="enjoymentValue"></span>
+		  			Flourishing <span id="flourishingValue"></span>
+		  		</p>
 				<p>
 		  			<button class="btn btn-primary" id="addActivity">Add</button>
 		  		</p>
@@ -64,6 +70,19 @@
 		</div>
 		<div class="row text-center">
 			<h3>Activities</h3>
+			<div class="form-group form-inline sortBy">
+			    <label for="sortOrder">Sort By</label>
+			    <select class="form-control form-control-sm" id="sortOrder">
+				    <option value="chronology">Chronology</option>
+				    <option value="importance">Importance</option>
+				    <option value="urgency">Urgency</option>
+				    <option value="experience">Experience</option>
+				    <option value="remember">Memorability</option>
+				    <option value="productivity">Productivity Score</option>
+				    <option value="enjoyment">Enjoyment Score</option>
+				    <option value="flourishing">Flourishing Score</option>
+			    </select>
+			</div>
 			<div id="activitiesList">
 			</div>
 		</div>
